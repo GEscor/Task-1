@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>
+            Первое число:<br>
+            <input type="number" value="0.1" id="value1"/>
+        </label>
+        <br>
+        <label>
+            Второе число:<br>
+            <input type="number" value="0.2" id="value2"/>
+        </label>
+        <br>
+        <br>
+        <button onclick="sum()">Сложить</button>
+    </div>
+    <script>
+        //На кнопке висит обработчик при нажатии
+        //При нажатии на кнопку находит в DOM по id два input, 
+        //берет их значения и складывает с округлением до 10 знаков, 
+        //преобразует результат в число, выводит сообщение  
+        let sum = () =>{
+            let value1 = document.getElementById("value1");
+            let value2 = document.getElementById("value2");
+            let sum = parseFloat((+value1.value + +value2.value).toFixed(10));
+            alert('Сумма двух чисел '+ sum);
+            return;
+        }
+    </script>
+</body>
+</html>
